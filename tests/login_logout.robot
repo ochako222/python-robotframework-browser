@@ -5,6 +5,6 @@ Resource  resource.robot
 
 *** Test Cases ***
 Open Browser Page
-    Open Webpage
-    Search Keywords
-    Click Keyword
+    Open Syndicate Login Page
+    Fill in login form
+    Expect home page loaded

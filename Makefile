@@ -1,2 +1,2 @@
 single:
-	robot -A robotargs.robot tests/first_test.robot
+	robot -A robotargs.robot tests/login_logout.robot

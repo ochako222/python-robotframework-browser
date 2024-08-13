@@ -2,17 +2,21 @@
 Library  Browser
 
 *** Variables ***
-${URL}  https://marketsquare.github.io/robotframework-browser/Browser.html
-${SEARCH_FIELD}  //input[@placeholder="Search"]
-${CLICK_BROWSER_KEYWORD}  //li//a//span[contains(text(), "Open Browser")]
-
+${URL}  https://portal3.qa.bravais.com
 
 *** Keywords ***
-Open Webpage
+Open Syndicate Login Page
     Open Browser  ${URL}
 
-Search Keywords
-    Fill Text  ${SEARCH_FIELD}  Download
+Fill in login form
+    Fill Text  css=#username  oleksandr.chako+1@xyleme.com
+    Fill Text  css=#password  Mypass@123
+    Click  css=#submitBtn
 
-Click Keyword
-    Click  ${CLICK_BROWSER_KEYWORD}
+Expect home page loaded
+    # TODO: fix this part
+    # Wait For Elements State    css=.favorites-grid:nth-of-type(1)   visible
+    Wait For Elements State    css=.headerRow    visible
+    Wait For Elements State    css=.channels    visible 
+
+    
