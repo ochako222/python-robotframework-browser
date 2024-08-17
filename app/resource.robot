@@ -1,6 +1,5 @@
 *** Settings ***
 Library  Browser
-Library  OperatingSystem
 Variables    ../env_variables.yml
 
 *** Keywords ***
@@ -25,5 +24,16 @@ Expect error message appeared
     Wait For Elements State    ${element}    visible
     ${errorMessage}  Get Text  ${element}
     Should Be Equal  ${errorMessage}  The username or password is incorrect.
+
+Navigate By Link
+    [Arguments]  ${link}
+    Click  css=.headerMenu .menuList a >> text=${link}
+
+Expect Documents Page Loaded
+    Wait For Elements State    css=.documents-header    visible
+    Wait For Elements State    css=.documents-breadcrumbs    visible
+    Wait For Elements State    css=[data-cy="add-folder-btn"]    visible
+    Wait For Elements State    css=[data-cy="add-document-btn"]    visible
+    
 
     
