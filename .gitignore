@@ -1,7 +1,9 @@
-env
+env_variables.yml
 
 .pytest_cache
 .DS_Store
 
 __pycache__/
 report/
+env/
+
