@@ -7,7 +7,6 @@ Resource  ../app/hooks.robot
 *** Variables ***
 ${NEW_FOLDER_NAME}  Evaluate  FolderEntity("NewFolder", "My Awesome Folder") 
 
-
 *** Test Cases ***
 Create New Folder
     [Tags]  smoke
