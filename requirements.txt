@@ -1,8 +1,11 @@
 click==8.1.7
+greenlet==3.0.3
 grpcio==1.65.4
 grpcio-tools==1.65.4
 overrides==7.7.0
+playwright==1.46.0
 protobuf==5.27.3
+pyee==11.1.0
 PyYAML==6.0.2
 robotframework==7.0.1
 robotframework-assertion-engine==3.0.3

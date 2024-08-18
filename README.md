@@ -38,6 +38,7 @@ This project use playwright, when you launch tests first time, don't forget to l
 
 ```bash
 playwright install
+rfbrowser init
 ```
 
 Now to launch existed tests we can run command:

@@ -9,6 +9,4 @@ Test Setup  Login to Syndicate
 Create New Folder
     Navigate By Link  Documents
     Expect Documents Page Loaded
-
-
-
+    
