@@ -1,4 +1,4 @@
 single:
-	robot -A robotargs.robot tests/login_logout.robot
+	robot -A robotargs.robot tests/documents.robot
 
 

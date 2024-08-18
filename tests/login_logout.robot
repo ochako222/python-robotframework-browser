@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation  Basic example
-Resource  ../app/resource.robot
+Resource  ../app/resources/login_page_resources.robot
+Resource  ../app/resources/home_page_resources.robot
 
 *** Test Cases ***
 Login User with Password

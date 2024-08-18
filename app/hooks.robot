@@ -1,7 +1,8 @@
 *** Settings ***
 Library  Browser
 Variables    ../env_variables.yml
-Resource  ../app/resource.robot
+Resource  ../app/resources/login_page_resources.robot
+Resource  ../app/resources/home_page_resources.robot
 
 
 *** Keywords ***
