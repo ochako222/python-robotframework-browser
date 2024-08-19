@@ -6,29 +6,36 @@ Variables    ../../env_variables.yml
 Create New Folder With Name ${folder_entity}
      Click  css=[data-cy="add-folder-btn"]
      Wait For Elements State    css=[data-cy="new-folder-title"]    visible
-     Get Text  css=[data-cy="new-folder-title"]  visible
-     Fill Text  css=[data-cy="name-text-field"] >> input  ${folder_entity}.name
-     Fill Text  css=[data-cy="description-text-area"]  ${folder_entity}.description
+    #  Sleep  60s
+     Get Text  css=[data-cy="new-folder-title"]  ==  Add new folder
+     Fill Text  css=[data-cy="name-text-field"] >> input  ${folder_entity}[title]
+     Fill Text  css=[data-cy="description-text-area"]  ${folder_entity}[description]
      Click  css=[data-cy="save-button"]
-     Get Text    .documents-breadcrumbs-text    ==   ${folder_entity}.name
+     Get Text    .documents-breadcrumbs-text    ==   ${folder_entity}[title]
 
-Filter Document ${folder_entity}
-    Fill Text  placeholder=Start typing name...  ${folder_entity}.name
+Filter Document ${document}
+    Fill Text  css=[placeholder="Start typing name..."]  ${document}
     
     
-
-Delete Folder With Name ${folder_entity}
-    ${element}=  Get Element  css=[data-id*="Foo"]
+Select Document By Name ${document} And Click Delete
+    ${element}=  Get Element  css=[data-id*="${document}"]
     Wait For Elements State    ${element}    visible
     Click  ${element} >> [data-cy="data-grid-checkbox"]
     Click  css=[data-cy="delete-action-icon"]
-    Wait For Condition    Element States    css=[data-id*="Foo"]    ==    detached
 
 Expect Documents Page Loaded
     Wait For Elements State    css=.documents-header    visible
     Wait For Elements State    css=.documents-breadcrumbs    visible
     Wait For Elements State    css=[data-cy="add-folder-btn"]    visible
     Wait For Elements State    css=[data-cy="add-document-btn"]    visible
+
+Confirm Delete Document Modal
+    Get Text    css=[data-cy="confirmation-archive-title"]  ==  Archive item
+    Click  css=[data-cy="archive-button"]
+
+
+Expect Document With Name ${document} Deleted
+    Wait For Condition    Element States    css=[data-id*="${document}"]    ==    detached
 
 
     

@@ -1,7 +1,15 @@
-class FolderEntity:
-    def __init__(self, name, description):
-        self.name = name
-        self.description = description
+from robot.api.deco import library,keyword
 
-    def __repr__(self):
-        return f"FolderEntity(name='{self.name}', description='{self.description}')"
+# @library(scope='GLOBAL')
+# class ExampleLibrary:
+#     def __init__(self):
+#         self._counter = 0
+
+#     @keyword
+#     def get_new_folder(self):
+#         self._counter += 1
+#         print(self._counter)
+
+@keyword
+def get_new_folder():
+    return {'title': "It's a title", 'description': "it's a description"} 
