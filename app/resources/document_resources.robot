@@ -1,6 +1,5 @@
 *** Settings ***
 Library  Browser
-Variables    ../../env_variables.yml
 
 *** Keywords ***
 Create New Folder With Name ${folder_entity}
@@ -36,6 +35,9 @@ Confirm Delete Document Modal
 
 Expect Document With Name ${document} Deleted
     Wait For Condition    Element States    css=[data-id*="${document}"]    ==    detached
+
+Expect Document With Name ${document} Visible
+     Wait For Elements State    css=[data-id*="${document}"]    visible
 
 
     

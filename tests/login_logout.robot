@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation  Basic example
+Documentation  Login Feature
 Resource  ../app/resources/login_resources.robot
 
 
