@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation  Basic example
 Resource  ../app/resources/document_resources.robot
-Resource  ../app/hooks.robot
-Library  ../app/Types.py
+Resource  ../app/resources/login_resources.robot
+Resource  ../app/resources/navigation_resources.robot
 
 *** Variables ***
 &{NEW_FOLDER_NAME}  title=TEST_AUTOMATION_FOLDER  description=TEST_AUTOMATION_DESCRIPTION
@@ -10,7 +10,7 @@ Library  ../app/Types.py
 *** Test Cases ***
 Create New Folder
     [Tags]  smoke
-    [Setup]  Login to Syndicate
+    [Setup]  Login To Syndicate
     Navigate By Link  Documents
     Expect Documents Page Loaded
     Create New Folder With Name ${NEW_FOLDER_NAME}
