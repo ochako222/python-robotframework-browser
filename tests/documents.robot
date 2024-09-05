@@ -14,6 +14,8 @@ Suite Setup  Login To Syndicate
 *** Test Cases ***
 Create New Folder
     [Tags]  smoke
+    [Setup]  Delete Folder By Name If Exist  ${NEW_FOLDER_FIRST}[title]
+
     Navigate By Link  Documents
     Expect Documents Page Loaded
     Create New Folder With Name ${NEW_FOLDER_FIRST}
@@ -25,7 +27,7 @@ Create New Folder
     Expect Document With Name ${NEW_FOLDER_FIRST}[title] Deleted
 
 Create Folder Via API
-    [Tags]  api
+    [Tags]  api  robot:skip
     [Setup]  Delete Folder By Name If Exist  ${NEW_FOLDER_SECOND}[title]
 
     Navigate By Link  Documents

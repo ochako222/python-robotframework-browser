@@ -1,5 +1,5 @@
 single:
-	robot -A robotargs.robot --include api tests/
+	robot -A robotargs.robot tests/documents.robot
 all:
 	robot -A robotargs.robot tests/
 smoke:
